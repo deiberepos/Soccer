@@ -38,6 +38,7 @@ namespace Soccer.Web
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("SoccerConnection"));
             });
+            services.AddTransient<SeedDb>();
             services.AddScoped<IConverterHelper, ConverterHelper>();
             services.AddScoped<IImageHelper, ImageHelper>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
