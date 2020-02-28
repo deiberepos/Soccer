@@ -32,6 +32,7 @@ namespace Soccer.Web.Data.Entities
         public bool IsClosed { get; set; }
 
         public GroupEntity Group { get; set; }
+        public ICollection<PredictionEntity> Predictions { get; set; }
     }
 
 }

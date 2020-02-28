@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Soccer.Web.Data;
@@ -10,6 +11,7 @@ using Soccer.Web.Models;
 
 namespace Soccer.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TeamsController : Controller
     {
         private readonly DataContext _context;

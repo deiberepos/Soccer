@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Soccer.Web.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Soccer.Web.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<UserEntity>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -18,8 +19,9 @@ namespace Soccer.Web.Data
 
         public DbSet<MatchEntity> Matches { get; set; }
 
+        public DbSet<PredictionEntity> Predictions { get; set; }
         public DbSet<TeamEntity> Teams { get; set; }
-
+        
         public DbSet<TournamentEntity> Tournaments { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
