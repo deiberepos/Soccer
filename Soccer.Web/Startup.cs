@@ -48,7 +48,7 @@ namespace Soccer.Web
 
             services.AddDbContext<DataContext>(cfg =>
             {
-                cfg.UseSqlServer(Configuration.GetConnectionString("SoccerConnection"));
+                cfg.UseSqlServer(Configuration.GetConnectionString("soccerConnection"));
             });
             services.AddTransient<SeedDb>();
             services.AddScoped<IConverterHelper, ConverterHelper>();
